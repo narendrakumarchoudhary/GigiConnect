@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | GigConnect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="menu-toggle" id="menuToggle">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('browse') }}">Browse Workers</a>
+        <a href="{{ url_for('register') }}">Join as Worker</a>
+        <a href="{{ url_for('post_job') }}">Post a Job</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        {% if session.get('user') %}
+          <a href="{{ url_for('api_logout') }}" id="logoutBtn">Logout</a>
+        {% else %}
+          <a href="{{ url_for('login') }}" id="loginBtn">Login</a>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+  <main class="dashboard-container">
+    <h2 id="welcomeMessage">Welcome, {{ user.email if user else 'Guest' }}!</h2>
+    
+    <div id="dashboardContent">
+      {% if user %}
+        {% if user.role == 'customer' %}
+          <p>You are logged in as a <strong>Customer</strong>. You can post jobs and view applications.</p>
+        {% elif user.role == 'worker' %}
+          <p>You are logged in as a <strong>Gig Worker</strong>. You can view job posts and manage your services.</p>
+        {% endif %}
+      {% else %}
+        <p>Please <a href="{{ url_for('login') }}">log in</a> to view your dashboard.</p>
+      {% endif %}
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GigConnect. All rights reserved.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

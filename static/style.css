@@ -1,0 +1,306 @@
+/* Updated style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header and Navigation */
+header {
+  background: #0a3d62;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  display: none !important;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #74b9ff;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+/* Buttons */
+.btn, .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin: 0 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn {
+  background-color: #0a3d62;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #f1c40f;
+  color: #333;
+}
+
+.btn:hover, .btn-secondary:hover, .worker-card button:hover, form button:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0a3d62;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Browse Page */
+.browse-container {
+  padding: 2rem;
+}
+
+.browse-container h2 {
+  margin-bottom: 1rem;
+}
+
+.filters {
+  margin-bottom: 1.5rem;
+}
+
+.filters label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.filters select, .filters input {
+  margin-right: 1.5rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.worker-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.worker-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.worker-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.worker-card p {
+  margin-bottom: 0.25rem;
+}
+
+.worker-card button {
+  background: #0a3d62;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.no-workers {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  color: #777;
+}
+
+/* Form Pages */
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.form-container h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form input, form select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.success-message {
+  margin-top: 1rem;
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Dashboard */
+.dashboard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-container h2 {
+  margin-bottom: 1rem;
+}
+
+.dashboard-box {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+    border-top: 1px solid #444;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: white;
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    background-color: #444;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .form-container, .dashboard-container, .job-post, .worker-card {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  input, select, textarea, button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Sticky Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Input Focus */
+select:focus, input:focus, textarea:focus {
+  outline: 2px solid #0a3d62;
+  border-color: #0a3d62;
+}
